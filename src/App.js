@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import './componentes/Navbar'
+import Navbar from './componentes/Navbar';
+import { BaseColaboradores } from './data/BaseColaboradores';
+import List from './componentes/List';
 
 function App() {
+  const [baseColaboradores, setBaseColaboradores] = useState(BaseColaboradores);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container-fluid">
+      <Navbar />
+      <hr />
+      <div className='container'>
+        <List baseColaboradores={baseColaboradores}/>
+      </div>
     </div>
   );
 }
