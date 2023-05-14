@@ -6,12 +6,16 @@ import List from './componentes/List';
 
 function App() {
   const [baseColaboradores, setBaseColaboradores] = useState(BaseColaboradores);
+  const [filtered, setFilter] = useState('')
+  const handleChanges = (e) => {
+    setFilter(e)
+  }
   return (
     <div className="container-fluid">
-      <Navbar />
+      <Navbar onChanges = { handleChanges } />
       <hr />
       <div className='container'>
-        <List baseColaboradores={baseColaboradores}/>
+        <List baseColaboradores = { baseColaboradores } filterList = { filtered }/>
       </div>
     </div>
   );
