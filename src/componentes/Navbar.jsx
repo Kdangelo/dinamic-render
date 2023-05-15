@@ -3,7 +3,6 @@ import React from "react"
 const Navbar = ({ onChanges }) => {
 
 const  handleChangeInput = (e) => {
-  console.log(e.target.value)
   onChanges(e.target.value)
 }
 

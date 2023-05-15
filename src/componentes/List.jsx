@@ -7,6 +7,7 @@ const List = ({ baseColaboradores, filterList }) => {
             baseColaboradores.correo.toLowerCase().includes(item)
     )
   })
+  
   return (
     <ul>
       { filterCollaborator.map(colaborador => <li key={colaborador.id}>{colaborador.nombre} - {colaborador.correo}</li>) }
